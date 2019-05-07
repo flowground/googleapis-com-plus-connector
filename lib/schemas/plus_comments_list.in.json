@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "activityId": {
+            "required": true,
+            "type": "string"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 500,
+            "default": 20
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "sortOrder": {
+            "type": "string",
+            "enum": [
+                "ascending",
+                "descending"
+            ],
+            "default": "ascending"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

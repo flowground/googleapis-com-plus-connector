@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "collection": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "connected",
+                "visible"
+            ]
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 100
+        },
+        "orderBy": {
+            "type": "string",
+            "enum": [
+                "alphabetical",
+                "best"
+            ]
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "userId": {
+            "required": true,
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

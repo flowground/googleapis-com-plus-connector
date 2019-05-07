@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "language": {
+            "type": "string",
+            "default": "en-US"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20,
+            "default": 10
+        },
+        "orderBy": {
+            "type": "string",
+            "enum": [
+                "best",
+                "recent"
+            ],
+            "default": "recent"
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

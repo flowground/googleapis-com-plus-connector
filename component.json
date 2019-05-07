@@ -1,0 +1,203 @@
+{
+    "title": "Google+",
+    "description": "Builds on top of the Google+ platform.",
+    "docsUrl": "https://developers.google.com/+/api/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/plus/v1/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/plus/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "plus_activities_search": {
+            "main": "./lib/actions/plus_activities_search.js",
+            "title": "Search public activities.",
+            "description": "Search public activities.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_activities_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_activities_get": {
+            "main": "./lib/actions/plus_activities_get.js",
+            "title": "Get an activity.",
+            "description": "Get an activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_activities_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_comments_list": {
+            "main": "./lib/actions/plus_comments_list.js",
+            "title": "List all of the comments for an activity.",
+            "description": "List all of the comments for an activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_comments_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_people_listByActivity": {
+            "main": "./lib/actions/plus_people_listByActivity.js",
+            "title": "List all of the people in the specified collection for a particular activity.",
+            "description": "List all of the people in the specified collection for a particular activity.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_people_listByActivity.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_comments_get": {
+            "main": "./lib/actions/plus_comments_get.js",
+            "title": "Get a comment.",
+            "description": "Get a comment.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_comments_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_people_search": {
+            "main": "./lib/actions/plus_people_search.js",
+            "title": "Search all public profiles.",
+            "description": "Search all public profiles.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_people_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_people_get": {
+            "main": "./lib/actions/plus_people_get.js",
+            "title": "Get a person's profile. If your app uses scope https://www.googleapis.com/auth/plus.login, this method is guaranteed to return ageRange and language.",
+            "description": "Get a person's profile. If your app uses scope https://www.googleapis.com/auth/plus.login, this method is guaranteed to return ageRange and language.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_people_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_activities_list": {
+            "main": "./lib/actions/plus_activities_list.js",
+            "title": "List all of the activities in the specified collection for a particular user.",
+            "description": "List all of the activities in the specified collection for a particular user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_activities_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "plus_people_list": {
+            "main": "./lib/actions/plus_people_list.js",
+            "title": "List all of the people in the specified collection.",
+            "description": "List all of the people in the specified collection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/plus_people_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "collection": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "public"
+            ]
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 20
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "userId": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}

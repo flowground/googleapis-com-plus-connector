@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "language": {
+            "type": "string",
+            "default": "en-US"
+        },
+        "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 25
+        },
+        "pageToken": {
+            "type": "string"
+        },
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        }
+    }
+}
